@@ -1,0 +1,45 @@
+name: Continuous Integration Workflow
+
+on:
+  pull_request:
+    branches:
+      -  main
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./web
+
+jobs:
+
+  test:
+    name: 'Run unit tests'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: 'Checkout Repository'
+      
+      - name: "Install Dependencies"
+        run: npm install
+      
+      - name: "Run Tests"
+        run: npm run test
+  
+  lint:
+    name: "Run Linter"
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v4
+      name: 'Checkout Repository'
+
+    - name: "Install Dependencies"
+      run: npm install
+    
+    - name: " Run Linter"
+      run: npx standard -v
+
+
+
+
