@@ -51,7 +51,7 @@ jobs:
       - name: 'Set up Node.js'
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Use the Node.js version that suits your app
+          node-version: '20'  # Use the Node.js version that suits your app
 
       - name: 'Install Dependencies'
         run: npm install
@@ -62,8 +62,8 @@ jobs:
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: <YOUR_APP_NAME>  # Replace with your Azure Web App name
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}  # The secret containing your publish profile
+          app-name: ar1891-h5bvechcdee6beew.northeurope-01.azurewebsites.net 
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '.' 
 
 
