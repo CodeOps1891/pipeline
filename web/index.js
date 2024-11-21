@@ -4,7 +4,7 @@ const app = express()
 app.get('/', (req, res) => {
   res.status(201).json({
     resource: 'Ice-Flakes',
-    count: 101,
+    count: 500,
     shape: 'circle'
   })
 })
