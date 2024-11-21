@@ -12,7 +12,7 @@ describe('GET /', () => {
 
     // Assert that the response is a JSON object with the expected keys
     expect(response.body).toHaveProperty('resource', 'Ice-Flakes')
-    expect(response.body).toHaveProperty('count', 100)
+    expect(response.body).toHaveProperty('count', 101)
     expect(response.body).toHaveProperty('shape', 'circle')
   })
 })
